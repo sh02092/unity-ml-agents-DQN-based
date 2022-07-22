@@ -72,3 +72,5 @@ OnCollisionEnter() 함수를 사용하여 연석의 is trigger 항목을 체크 
 
 ### (2022년 7월 22일) 하이퍼 파라미터 튜닝은 어려워...
 많은 경우의 수를 생각하고 변경해가며 학습을 돌리고 있는데, 한번 학습 환경을 돌리는데도 오랜 시간이 걸리며, 제대로 학습이 되는지 확인하려면 마지막 에피소드가 끝날 때까지 기다리고, 그래프로 봐야 하기 때문에 정말 힘든 시간의 연속이다.
+
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/41476d889d24c7594dd1bbbcb450f8337b0a7fef/Image/220722-DRL.gif"/></img>
