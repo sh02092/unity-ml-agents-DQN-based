@@ -20,8 +20,8 @@
 * 차량 속도가 10.0f: step 당 0.4m -> 1초에 20m 이동: 72km/h
 
 ### (2022년 7월 6일) 실제 외곽 순환도로 환경과 유사하게 도로 재구성
-
 실제 외곽 순환 도로와 비슷하게 구성하였으며, 왕복 4차선의 도로이다. 보통 차량이 차선을 달릴 경우 추월할 경우를 제외하고 2차선을 달리도록 되어있는데, 자율 주행의 경우 안전이 최우선이므로 2차선 고정 주행을 할 수 있도록 설정했다.
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/20fc3687769f0d2dacf8c5f7e0fe4b5801b27239/Image/new%20road%20environment.png"></img>
 
 ### (2022년 7월 9일) Bullet through paper 문제 발생
 게임에 사용되는 물리학은 연속적이지 않고, 게임 화면을 이용해 충돌을 판단한다. 하지만 object의 이동 속도가 빠르다면 collider가 있음에도 충돌을 인식하지 못하여 통과하게 된다.
@@ -39,6 +39,7 @@
 ### (2022년 7월 10일) 발생되는 문제에 대한 내 생각
 Bullet through paper 문제를 연속적인 충돌 감지로 해결했다고 생각했지만 해결이 되지 않았다. 어떤 문제인지 알아보기 위해 Gizmos.DrawWireCube 를 이용해 차량 에이전트를 둘러싸고 있는 cube를 그려봤다. 
 
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/20fc3687769f0d2dacf8c5f7e0fe4b5801b27239/Image/around%20car%20agent.png" width="40%" height="30%"></img>
 
 차량에 설정한 Box Collider Component의 Edit Collider와 달라 이 부분에 의한 문제로 충돌 감지가 제대로 이루어지지 않는 것으로 추측된다. 아무래도 유니티에 대한 기초가 부족하여 구글링하여 나온 자료를 그대로 사용하다 보니 생긴 문제라고 생각된다.
 
