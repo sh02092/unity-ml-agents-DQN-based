@@ -81,7 +81,7 @@ OnCollisionEnter() 함수를 사용하여 연석의 is trigger 항목을 체크 
 차량의 도로상 위치를 직선, 우측, 좌측 모두 수행할 수 있게끔 수정하여 학습을 다시 시도해야겠다.
 
 * 차량의 도로상 위치 변경 전
-<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/7d094d59744b0775107dca6228e241fad850ffef/Image/before%20car%20agent%20location.PNG" width="50%" height="50%" >
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/7d094d59744b0775107dca6228e241fad850ffef/Image/before%20car%20agent%20location.PNG" width="80%" height="80%" >
 
 * 차량의 도로상 위치 변경 후
-<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/7d094d59744b0775107dca6228e241fad850ffef/Image/move%20car%20agent%20location.PNG" width="50%" height="50%">
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/7d094d59744b0775107dca6228e241fad850ffef/Image/move%20car%20agent%20location.PNG" width="80%" height="80%">
