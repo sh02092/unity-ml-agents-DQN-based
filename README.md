@@ -21,7 +21,7 @@
 
 ### (2022년 7월 6일) 실제 외곽 순환도로 환경과 유사하게 도로 재구성
 실제 외곽 순환 도로와 비슷하게 구성하였으며, 왕복 4차선의 도로이다. 보통 차량이 차선을 달릴 경우 추월할 경우를 제외하고 2차선을 달리도록 되어있는데, 자율 주행의 경우 안전이 최우선이므로 2차선 고정 주행을 할 수 있도록 설정했다.
-<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/20fc3687769f0d2dacf8c5f7e0fe4b5801b27239/Image/new%20road%20environment.png"></img>
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/20fc3687769f0d2dacf8c5f7e0fe4b5801b27239/Image/new%20road%20environment.png">
 
 ### (2022년 7월 9일) Bullet through paper 문제 발생
 게임에 사용되는 물리학은 연속적이지 않고, 게임 화면을 이용해 충돌을 판단한다. 하지만 object의 이동 속도가 빠르다면 collider가 있음에도 충돌을 인식하지 못하여 통과하게 된다.
@@ -39,7 +39,7 @@
 ### (2022년 7월 10일) 발생되는 문제에 대한 내 생각
 Bullet through paper 문제를 연속적인 충돌 감지로 해결했다고 생각했지만 해결이 되지 않았다. 어떤 문제인지 알아보기 위해 Gizmos.DrawWireCube 를 이용해 차량 에이전트를 둘러싸고 있는 cube를 그려봤다. 
 
-<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/20fc3687769f0d2dacf8c5f7e0fe4b5801b27239/Image/around%20car%20agent.png" width="40%" height="30%"></img>
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/20fc3687769f0d2dacf8c5f7e0fe4b5801b27239/Image/around%20car%20agent.png" width="40%" height="30%">
 
 차량에 설정한 Box Collider Component의 Edit Collider와 달라 이 부분에 의한 문제로 충돌 감지가 제대로 이루어지지 않는 것으로 추측된다. 아무래도 유니티에 대한 기초가 부족하여 구글링하여 나온 자료를 그대로 사용하다 보니 생긴 문제라고 생각된다.
 
@@ -73,7 +73,7 @@ OnCollisionEnter() 함수를 사용하여 연석의 is trigger 항목을 체크 
 ### (2022년 7월 22일) 하이퍼 파라미터 튜닝은 어려워...
 많은 경우의 수를 생각하고 변경해가며 학습을 돌리고 있는데, 한번 학습 환경을 돌리는데도 오랜 시간이 걸리며, 제대로 학습이 되는지 확인하려면 마지막 에피소드가 끝날 때까지 기다리고, 그래프로 봐야 하기 때문에 정말 힘든 시간의 연속이다.
 
-<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/41476d889d24c7594dd1bbbcb450f8337b0a7fef/Image/220722-DRL.gif"/></img>
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/41476d889d24c7594dd1bbbcb450f8337b0a7fef/Image/220722-DRL.gif"/>
 
 ### (2022년 7월 25일) 차량 위치 변경
 7월 22일 어느정도 학습된 차량의 영상에서 보다시피 어느정도 학습이 된 것을 확인했다.
@@ -89,7 +89,7 @@ OnCollisionEnter() 함수를 사용하여 연석의 is trigger 항목을 체크 
 ### (2022년 7월 26일) 결과 분석
 7월 25일 학습 시켰던 차량을 10,000번의 에피소드 거친 이후 결과를 확인했다. 
 
-max q value 이미지
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/dab711a1f125e8a757988684932ea3831affb4e4/Image/max%20Q-value%20220725.PNG" width="50%" height="50%">
 
 약 80~100 번의 타겟 업데이트 이후 점점 max Q-value의 값이 작아지는 것을 볼 수 있다. 
 위 결과에 대한 결과 분석
@@ -98,9 +98,10 @@ max q value 이미지
 
 * Overfitting: 너무 모델이 반복적인 초반 도로에만 최적화되게끔 학습이 된 것인지 확인하기 위해 약 90번의 타겟 업데이트 이후 타겟 네트워크를 고정시켜 다시 학습해봐야겠다.
 
-* 
+* 차량 에이전트가 한 가지 행동을 5 스텝동안 지속: 2차선에서 달리면서 차량이 학습을 하는 과정에서 핸들을 오른쪽으로 꺾고 5스텝을 진행하면 5스텝이 다하기 전에 리셋이 되지는 않지만 다시 복구할 수 없을 정도로 벽과 가까워지게 되어 곧바로 리셋된다.
 
-
-driving time 이미지
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/dab711a1f125e8a757988684932ea3831affb4e4/Image/driving%20time%20220725.PNG" width="50%" height="50%">
 
 100 에피소드마다 평균치를 내어 차량 에이전트가 주행한 시간을 측정했는데, 꾸준히 증가하며 학습이 완료된 시점에 수렴하는 것이 아니라 가늠하기 힘들 정도로 심하게 편차가 큰 것을 볼 수 있다.
+
+loss 값을 따로 뽑아 max Q-value 값과 비교, 차량 에이전트가 한 가지 행동을 3 스텝동안 지속하도록 변경하여 기존의 10,000번의 에피소드가 아닌 7,000번의 에피소드로 줄여 학습을 진행한다.
