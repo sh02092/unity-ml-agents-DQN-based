@@ -10,6 +10,7 @@
     
     속도에 따라 (이동한 거리)가 1.0 1.5 2.0 으로 구성
 
+
 ### (2022년 8월 3일) 이륜 차량의 주행 특성에 맞는 ray-sensor 추가 및 reward 조건 추가
 
 <img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/f53449807343473ac7d9d7d2a1ca9cd13ef041ec/Image/add%20ray%20sensor.jpg" width="50%" height="50%">
