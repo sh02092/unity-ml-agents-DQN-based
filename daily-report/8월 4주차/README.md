@@ -10,4 +10,4 @@ Agent와 부딪힐 경우 Agent는 Reset 되며, 장애물끼리 부딪힐 경�
 따라서 Agent는 'wall', 'goal', 'obstacle' Tag 모두 부딪힐 경우 Reset 되고, 
 'obstacle' 끼리 부딪힐 경우 그대로 통과한다.
 
-<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/f53449807343473ac7d9d7d2a1ca9cd13ef041ec/Image/add%20ray%20sensor.jpg" width="50%" height="50%">
+<img src="https://github.com/sh02092/unity-ml-agents-DQN-based/blob/a0920ceb7f138cf75ee552b2d19af49595fc9afd/Image/Obstacle.png" width="50%" height="50%">
