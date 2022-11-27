@@ -556,6 +556,6 @@ if __name__ == '__main__':
 # mini batch size -> 64
 
 # (22/11/11)
-# Unity: 3번의 step마다 action 요청 -> Unity에서의 3step == Python에서의 1step
-# Python: 10의 속도로 약 1200번의 action 요청 후 목표지점 도달
-# --> 전체 도로 길이 = 1200 x 3 x 0.4 = 약 1.44 km
+# Unity: 4번의 step마다 action 요청 -> Unity에서의 4step == Python에서의 1step
+# Python: 10의 속도로 약 1250번의 action 요청 후 목표지점 도달
+# --> 전체 도로 길이 = 1250 x 4 x 0.4 = 약 2.0 km
